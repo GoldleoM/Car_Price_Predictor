@@ -7,8 +7,6 @@ st.title("🚗 Car Price Prediction")
 
 ohe = pipe.named_steps['columntransformer']['onehotencoder']
 
-ohe
-
 names = ohe.categories[0]
 companies = ohe.categories[1]
 fuel_types = ohe.categories[2]

@@ -19,7 +19,7 @@ company = name.split()[0]
 st.write(f"Company: {company}")
 
 year = st.number_input("Year", min_value=1995, max_value=2019)
-kms_driven = st.number_input("KMs Driven", min_value=0)
+kms_driven = st.number_input("KMs Driven", min_value=0,max_value=100000)
 fuel_type = st.selectbox("Fuel Type", fuel_types)
 
 if st.button("Predict Price"):

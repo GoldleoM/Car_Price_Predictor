@@ -34,6 +34,6 @@ if st.button("Predict Price"):
     })
 
     prediction = pipe.predict(input_df)
-    if(prediction < 0):
-        prediction = 0
+    if(prediction[0] < 0):
+        prediction[0] = 0
     st.success(f"💰 Estimated Price: ₹ {int(prediction[0]):,}")

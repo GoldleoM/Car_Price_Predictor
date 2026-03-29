@@ -7,6 +7,7 @@ st.title("🚗 Car Price Prediction")
 
 ohe = pipe.named_steps['columntransformer']['onehotencoder']
 
+
 names = ohe.categories[0]
 companies = ohe.categories[1]
 fuel_types = ohe.categories[2]
@@ -27,11 +28,12 @@ if st.button("Predict Price"):
     input_df = pd.DataFrame({
         "name": [name],
         "company": [company],
-        "age": [2019 - year],
+        "age": 2019 - [year],
         "kms_driven": [kms_driven],
         "fuel_type": [fuel_type]
     })
 
     prediction = pipe.predict(input_df)
-
+    if(prediction < 0):
+        prediction = 0
     st.success(f"💰 Estimated Price: ₹ {int(prediction[0]):,}")

@@ -28,7 +28,7 @@ if st.button("Predict Price"):
     input_df = pd.DataFrame({
         "name": [name],
         "company": [company],
-        "age": 2019 - [year],
+        "age": [2019-year],
         "kms_driven": [kms_driven],
         "fuel_type": [fuel_type]
     })
